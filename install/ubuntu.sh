@@ -41,3 +41,6 @@ f=/etc/consul.d/config.json;test -e $f || tee $f <<EOF
   }
 }
 EOF
+
+echo "===begin consul service==="
+echo "sudo service consul start"
