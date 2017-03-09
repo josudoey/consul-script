@@ -1,11 +1,16 @@
 #!/bin/bash
-fs=${1:-/dev/xvda1}
-t=${2:-50}
+t=${1:-70}
+t2=${2:-85}
+fs=${3:-/dev/xvda1}
 line=`df -h | grep $fs`
 echo $line
 now=`echo $line| awk '{print $5}' | sed 's/[^0-9]*//g'`
 if [[ $now > $t ]]; then
     echo "$fs Disk above $t% (now:$now%)"
     exit 1
+fi
+if [[ $now > $t2 ]]; then
+    echo "$fs Disk above $t2% (now:$now%)"
+    exit 2
 fi
 exit 0
