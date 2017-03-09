@@ -35,6 +35,14 @@ f=/etc/consul.d/config.json;test -e $f || tee $f <<EOF
   "log_level": "INFO",
   "enable_syslog": false,
   "ui_dir": "/var/lib/consul/ui",
+  "ports": {
+    "dns": 8600,
+    "http": 8500,
+    "https:": -1,
+    "serf_lan": 8301,
+    "serf_wan": 8302,
+    "server": 8300
+  },
   "addresses": {
     "http": "0.0.0.0",
     "dns": "0.0.0.0"
