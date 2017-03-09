@@ -24,7 +24,7 @@ stop on runlevel [!2345]
 respawn
 exec start-stop-daemon --start --exec /usr/local/bin/consul -- agent --config-dir="/etc/consul.d" -bind=`hostname --ip-address`
 EOF
-if
+fi
 
 f=/etc/consul.d/config.json;test -e $f || tee $f <<EOF
 {
