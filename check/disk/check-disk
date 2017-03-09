@@ -4,7 +4,7 @@ t2=${2:-85}
 fs=${3:-/dev/xvda1}
 df -h
 line=`df -h | grep $fs`
-echo "=> $line"
+echo "=> $line (wranig: $t% critical:$t2%)"
 now=`echo $line| awk '{print $5}' | sed 's/[^0-9]*//g'`
 if [[ $now > $t ]]; then
     echo "$fs Disk above $t% (now:$now%)"
