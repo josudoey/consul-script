@@ -9,7 +9,7 @@ unzip -B -d /usr/local/bin consul_${version}_linux_amd64.zip
 unzip -B -d /var/lib/consul/ui consul_${version}_web_ui.zip
 
 
-if [ -d /etc/systemd/system ]; then
+if [ -x /bin/systemctl ]; then
 f=/etc/systemd/system/consul.service;test -e $f || tee $f <<EOF
 [Service]
 ExecStart=/usr/local/bin/consul  agent --config-dir="/etc/consul.d" -bind=`hostname --ip-address`
