@@ -1,0 +1,8 @@
+{
+  "check": {
+    "name": "disk",
+    "notes": "Warning 70%, Critical 85%, free",
+    "script": "check-disk 70 85 /dev/xvda1",
+    "interval": "2m"
+  }
+}

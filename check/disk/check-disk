@@ -1,0 +1,11 @@
+#!/bin/bash
+fs=${1:-/dev/xvda1}
+t=${2:-50}
+line=`df -h | grep $fs`
+echo $line
+now=`echo $line| awk '{print $5}' | sed 's/[^0-9]*//g'`
+if [[ $now > $t ]]; then
+    echo "$fs Disk above $t% (now:$now%)"
+    exit 1
+fi
+exit 0
