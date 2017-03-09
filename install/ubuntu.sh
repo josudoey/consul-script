@@ -3,6 +3,7 @@ which unzip || apt-get install -yyq unzip
 version=0.7.5
 cd /tmp
 mkdir -p /var/lib/consul
+mkdir -p /etc/consul.d
 wget https://releases.hashicorp.com/consul/${version}/consul_${version}_linux_amd64.zip -O consul_${version}_linux_amd64.zip
 wget https://releases.hashicorp.com/consul/${version}/consul_${version}_web_ui.zip -O consul_${version}_web_ui.zip
 unzip -B -d /usr/local/bin consul_${version}_linux_amd64.zip
