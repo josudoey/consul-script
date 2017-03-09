@@ -26,7 +26,7 @@ exec start-stop-daemon --start --exec /usr/local/bin/consul -- agent --config-di
 EOF
 if
 
-f=/etc/consul.d/config.json;test -e $f || tee $f << EOF
+f=/etc/consul.d/config.json;test -e $f || tee $f <<EOF
 {
   "bootstrap_expect": 1,
   "server": true,
