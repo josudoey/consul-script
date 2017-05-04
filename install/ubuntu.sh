@@ -38,7 +38,6 @@ f=/etc/consul.d/config.json;test -e $f || tee $f <<EOF
   "ports": {
     "dns": 8600,
     "http": 8500,
-    "https:": -1,
     "serf_lan": 8301,
     "serf_wan": 8302,
     "server": 8300
